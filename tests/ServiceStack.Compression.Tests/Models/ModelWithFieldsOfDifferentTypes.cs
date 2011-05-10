@@ -2,7 +2,7 @@ using System;
 using NUnit.Framework;
 using ServiceStack.Logging;
 
-namespace ServiceStack.CacheAccess.Providers.Tests.Models
+namespace ServiceStack.Compression.Tests.Models
 {
 	public class ModelWithFieldsOfDifferentTypes
 	{

@@ -1,19 +1,20 @@
 using NUnit.Framework;
-using ServiceStack.CacheAccess.Providers.Tests.Models;
+using ServiceStack.Compression.Tests.Models;
 using ServiceStack.Common;
-using ServiceStack.Common.Support;
+using ServiceStack.Compression;
 using ServiceStack.ServiceModel.Serialization;
+using ServiceStack.CacheAccess;
 
-namespace ServiceStack.CacheAccess.Providers.Tests
+namespace ServiceStack.Compression.Tests
 {
 	[TestFixture]
-	public class CompressionNetProviderTests
+	public class CompressionICSharpProviderTests
 	{
 		[TestFixtureSetUp]
 		public void TestFixtureSetUp()
 		{
-			StreamExtensions.DeflateProvider = new NetDeflateProvider();
-			StreamExtensions.GZipProvider = new NetGZipProvider();
+			StreamExtensions.DeflateProvider = (IDeflateProvider) new ICSharpDeflateProvider();
+			StreamExtensions.GZipProvider = (IGZipProvider) new ICSharpGZipProvider();
 		}
 
 		[Test]

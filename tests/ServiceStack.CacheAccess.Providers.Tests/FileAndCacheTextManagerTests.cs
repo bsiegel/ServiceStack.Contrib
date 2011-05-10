@@ -5,7 +5,6 @@ using ServiceStack.CacheAccess.Providers.Tests.Models;
 using ServiceStack.Common;
 using ServiceStack.Common.Utils;
 using ServiceStack.Common.Web;
-using ServiceStack.Compression;
 using ServiceStack.ServiceModel.Serialization;
 
 namespace ServiceStack.CacheAccess.Providers.Tests

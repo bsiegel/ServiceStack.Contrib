@@ -1,8 +1,10 @@
 ﻿using NUnit.Framework;
 using ServiceStack.CacheAccess.Providers;
+using ServiceStack.CacheAccess.Memcached;
 using ServiceStack.Redis;
+using ServiceStack.CacheAccess.Appfabric;
 
-namespace ServiceStack.CacheAccess.Memcached.Tests
+namespace ServiceStack.CacheAccess.Providers.Tests
 {
 	[TestFixture]
 	[Ignore("Ignoring integration tests that require infracture")]
@@ -26,6 +28,11 @@ namespace ServiceStack.CacheAccess.Memcached.Tests
 			AssertGetAll(new MemcachedClientCache(TestConfig.MasterHosts));
 		}
 
+        [Test]
+        public void Appfabric_GetAll_returns_missing_keys() {
+            AssertGetAll(new AppfabricClient(TestConfig.MasterHosts));
+        }
+
 		[Test]
 		public void Memory_GetSetIntValue_returns_missing_keys()
 		{
@@ -46,5 +53,10 @@ namespace ServiceStack.CacheAccess.Memcached.Tests
 			AssertGetSetIntValue((ICacheClient)client);
 		}
 
+        [Test]
+        public void Appfabric_GetSetIntValue_returns_missing_keys() {
+            var client = new AppfabricClient(TestConfig.MasterHosts);
+            AssertGetSetIntValue((ICacheClient) client);
+        }
 	}
 }

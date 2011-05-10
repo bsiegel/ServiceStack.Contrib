@@ -1,6 +1,7 @@
 using NUnit.Framework;
+using ServiceStack.CacheAccess.Providers.Tests.Models;
 
-namespace ServiceStack.CacheAccess.Memcached.Tests
+namespace ServiceStack.CacheAccess.Providers.Tests
 {
 	public abstract class AllCacheClientsTestBase
 	{

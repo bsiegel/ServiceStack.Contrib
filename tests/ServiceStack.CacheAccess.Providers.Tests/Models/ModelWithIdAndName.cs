@@ -1,7 +1,7 @@
 using System;
 using NUnit.Framework;
 
-namespace ServiceStack.CacheAccess.Memcached.Tests
+namespace ServiceStack.CacheAccess.Providers.Tests.Models
 {
 	[Serializable]
 	public class ModelWithIdAndName
